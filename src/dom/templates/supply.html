@@ -1,0 +1,133 @@
+﻿<html>
+<head>
+<title>生成結果</title>
+</head>
+<body>
+<center>
+生成完了．<br><br>
+<table>
+<tbody>
+<caption>サプライその１</caption>
+<tr>
+<th>
+カード名
+</th>
+<th>
+セット
+</th>
+<th>
+コスト
+</th>
+<th>
+</th>
+</tr>
+{% for value in supply1 %}
+<tr>
+<th>
+{{ value.0 }}
+</th>
+<td>
+{{ value.1 }}
+</td>
+<td>
+{{ value.2 }}
+</td>
+<td>
+{{ value.3 }}
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+<br><br>
+
+
+{% if supply2 %}
+<table>
+<tbody>
+<caption>サプライその２</caption>
+<tr>
+<th>
+カード名
+</th>
+<th>
+セット
+</th>
+<th>
+コスト
+</th>
+<th>
+</th>
+</tr>
+{% for value in supply2 %}
+<tr>
+<th>
+{{ value.0 }}
+</th>
+<td>
+{{ value.1 }}
+</td>
+<td>
+{{ value.2 }}
+</td>
+<td>
+{{ value.3 }}
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endif %}
+
+
+<br><br>{% if other %}
+<table>
+<tbody>
+<caption>その他必要なカード</caption>
+<tr>
+<th>
+カード名
+</th>
+<th>
+セット
+</th>
+<th>
+コスト
+</th>
+<th>
+</th>
+</tr>
+{% for value in other %}
+<tr>
+<th>
+{{ value.0 }}
+</th>
+<td>
+{{ value.1 }}
+</td>
+<td>
+{{ value.2 }}
+</td>
+<td>
+{{ value.3 }}
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endif %}
+
+<br><br>
+{% if Twitter1 %}
+<a target="blank" href="http://twitter.com/intent/tweet?text=今回のサプライは {{ Twitter1 }}です！%23Dominion">サプライその１をTwitterに流す</a><br><br>
+{% endif %}
+
+{% if Twitter2 %}
+<a target="blank" href="http://twitter.com/intent/tweet?text=今回のサプライは {{ Twitter2 }}です！%23Dominion">サプライその２をTwitterに流す</a><br><br>
+{% endif %}
+
+</center>
+</body>
+</html>
